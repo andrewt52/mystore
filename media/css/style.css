@@ -1,0 +1,16 @@
+* {
+  font-family: Arial, Verdana, sans-serif;
+  color: #665544;
+  text-align: left;}
+#top_header, #logo, #search, #login, #menu, #content, #footer, #sidebar {
+  background-color: #efefef;
+    margin-top: 20px;
+}
+#top_header {
+	background-color: rgb(237, 106, 0);}
+#footer {
+	background-image: url("http://127.0.0.1:8000/media/core/footerbg.png");
+	background-repeat: repeat-y;
+	height: 200px;}
+li {
+  display: inline;}
