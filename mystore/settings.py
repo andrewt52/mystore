@@ -109,7 +109,7 @@ ROOT_URLCONF = 'mystore.urls'
 WSGI_APPLICATION = 'mystore.wsgi.application'
 
 TEMPLATE_DIRS = (
-	'C:/Tutorials_DJ/mystore/templates',
+	'C:/sgc/mystore/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
