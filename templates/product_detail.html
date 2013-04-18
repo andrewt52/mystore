@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{product.name}}{% endblock %}
+{% block content %}{{product.name}}<br>
+<img src="/media/{{product.photo}}" height = "200" width = "200">
+<br>
+Manufacturer: {{product.manufacturer}}<br>
+{{product.description}}
+<br>
+Available options:
+<br>
+{% for sku in skus %}
+    <li>{{sku.description}} - ${{sku.retail_price}}
+    Quantity available: {{sku.quantity}}</li>
+    <br>
+    <br>
+{% endfor %}
+
+{% endblock %}

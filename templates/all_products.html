@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Products{% endblock %}
+{% block content %}<p>You are now browsing all of our products.</p><br>
+{%for item in items %}
+    <a href="/products/details/{{item.slug}}"><li><p><b>{{item.name}}</b><p>
+    <img src ="/media/{{item.photo}}" height="125" width="125")</li><br></a>
+{% endfor %}
+
+{% endblock %}
