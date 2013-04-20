@@ -1,16 +1,79 @@
 * {
-  font-family: Arial, Verdana, sans-serif;
-  color: #665544;
-  text-align: left;}
+  font-family: "Lucida Grande","DejaVu Sans","Bitstream Vera Sans",Verdana,Arial,sans-serif;
+  font-size: 13px;
+ }
+ 
 #top_header, #logo, #search, #login, #menu, #content, #footer, #sidebar {
-  background-color: #efefef;
+/*	background-color: #efefef; */
     margin-top: 20px;
 }
+
 #top_header {
-	background-color: rgb(237, 106, 0);}
+	background-color: rgb(237, 106, 0);
+}
+
 #footer {
 	background-image: url("http://127.0.0.1:8000/media/core/footerbg.png");
 	background-repeat: repeat-y;
-	height: 200px;}
+	height: 200px;
+}
+
+ul {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+
 li {
-  display: inline;}
+  display: inline;
+ }
+ 
+.fieldWrapper {
+	margin-bottom: 0.692em;
+}
+
+.fieldWrapper label {
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.fieldWrapper input {
+	width: 300px;
+}
+
+.form-required {
+    color: rgb(255, 0, 0);
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1, .h1 {
+    font-size: 2em;
+    line-height: 1.385em;
+    margin: 0px 0px 0.692em;
+    font-weight: normal;
+}
+
+ul.tabs li a {
+	color: rgb(237, 106, 0);
+}
+
+ul.tabs li a:hover, ul.tabs li a:focus, ul.tabs li.active a {
+    background: none repeat scroll 0% 0% rgb(237, 106, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 3px 3px 3px 3px;
+}
+
+a {
+	font-size: 13px;
+	padding: 3px 8px 3px 8px;
+	text-decoration:none;
+}
+
+.errorlist {
+	color: rgb(255, 0, 0);
+}
+}

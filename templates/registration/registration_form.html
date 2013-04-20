@@ -1,0 +1,37 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+	<h1 class="title">User Account</h1>
+	<ul class="tabs">
+		<li class="active"><a class="active" href="/accounts/register">Create new account</a></li>
+		<li><a href="/accounts/login">Log in</a></li>
+	</ul>
+	<br />
+	<form method="post" action="">{% csrf_token %}
+		<p>{{ form.non_field_errors }}</p>
+		<fieldset>
+		<legend>Account information:</legend>
+		<div class="fieldWrapper">
+			{{ form.username.errors }}
+			<label for="id_username">Username: <span class="form-required" title="This field is required.">*</span></label>
+			{{ form.username }}
+		</div>
+		<div class="fieldWrapper">
+			{{ form.email.errors }}
+			<label for="id_email">Email: <span class="form-required" title="This field is required.">*</span></label>
+			{{ form.email }}
+		</div>
+		<div class="fieldWrapper">
+			{{ form.password1.errors }}
+			<label for="id_password1">Password: <span class="form-required" title="This field is required.">*</span></label>
+			{{ form.password1 }}
+		</div>
+		<div class="fieldWrapper">
+			{{ form.password2.errors }}
+			<label for="id_password2">Verify Password: <span class="form-required" title="This field is required.">*</span></label>
+			{{ form.password2 }}
+		</div>
+		</fieldset>
+		<p><input type="submit" value="Create new account" /></p>
+	</form>
+{% endblock %}
