@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-	{% if user.is_authenticated %}
-		<p>Welcome, {{ user.username|capfirst }}. Thanks for stopping by.</p>
-	{% else %}
-		<p>Hello, please <a href="/accounts/login">log in.</a></p>
-	{% endif %}
-{% endblock%}
