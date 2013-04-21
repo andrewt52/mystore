@@ -1,10 +1,11 @@
 from django.db import models
 from shop.models import Product
+from mptt.models import MPTTModel, TreeForeignKey
 
-class Category(models.Model):
-	name = models.CharField(max_length=64)
+class Category(MPTTModel):
+	name = models.CharField(max_length=64, unique=True)
 	slug = models.SlugField(max_length=64)
-	parent = models.ForeignKey('self', blank=True, null=True, related_name='children')
+	parent = TreeForeignKey('self', blank=True, null=True, related_name='children')
 	photo = models.ImageField(upload_to='category_photos')
 	
 	def __unicode__(self):
@@ -15,6 +16,9 @@ class Category(models.Model):
 	class Meta:
 		verbose_name = 'Category'
 		verbose_name_plural = 'Categories'
+		
+	class MPTTMeta:
+		order_insertion_by = ['name']
 
 class Item(Product):
 	category = models.ForeignKey('Category', related_name='items')

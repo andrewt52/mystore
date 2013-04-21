@@ -1,1 +1,1 @@
-<p><a href="{% url cart %}">Shopping Cart ({{ cart.total_quantity }} items)</a></p>
+<a href="{% url "cart" %}">Cart (${{ cart.total_price | floatformat:"-2" }})({{ cart.total_quantity }})</a>

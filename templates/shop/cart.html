@@ -3,7 +3,10 @@
 
 {% block content %}
   <h1>{% trans "Your shopping cart" %}</h1>
+
   {% if cart_items %}
+
+
 
       <form method="post" action="{% url "cart_update" %}">
         {% csrf_token %}

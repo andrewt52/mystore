@@ -3,13 +3,15 @@
 	<head>
 		<title>SGC - The Sporting Goods Company</title>
 		{% load staticfiles %}
+		{% load shop_tags %}
+		{% load mptt_tags %}
 		<link rel="stylesheet" type="text/css" href="/media/css/960_12_col.css"/> 
 		<link rel="stylesheet" type="text/css" href="/media/css/style.css"/> 
 	</head>
 	<body>
 	<div class="container_12">
 		<div id="top_header" class="grid_12">
-			<div class="grid_10 alpha">
+			<div class="grid_9 alpha">
 				<ul class="header">
 				{% if user.is_authenticated %}
 					<li><a href="/accounts/profile">My Account</a></li>
@@ -20,9 +22,9 @@
 				{% endif %}
 				</ul>
 			</div>
-			<div id="cart" class="grid_2 omega">
+			<div id="cart" class="grid_3 omega">
 				<ul class="header">
-					<li><a href="{% url "cart" %}">View Cart</a></li>
+					<li>{% cart %}</li>
 				</ul>
 			</div>
 		</div>
@@ -35,12 +37,14 @@
 			<ul>
 				<li><a href="/">Home</a></li>
 				<li><a href="">About</a></li>
-				<li><a href="">Shop</a></li>
+				<li><a href="">Contact us</a></li>
 			</ul>
 		</div>
 		<div id="content" class="grid_12">
 			{% block content %}
-			<div id="sidebar" class="grid_3 alpha">{ Sidebar }</div>
+			<div id="sidebar" class="grid_3 alpha">
+
+			</div>
 			<div id="body" class="grid_9 omega">{% block body %}{% endblock%}</div>
 			{% endblock%}
 		</div>

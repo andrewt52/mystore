@@ -130,6 +130,7 @@ INSTALLED_APPS = (
     'shop',
     'shop.addressmodel',
     'products',
+    'mptt',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -162,3 +163,8 @@ LOGGING = {
 }
 
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window;
+
+from django.conf import global_settings
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    "django.core.context_processors.request",
+)
