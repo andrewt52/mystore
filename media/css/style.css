@@ -10,12 +10,17 @@
 
 #top_header {
 	background-color: rgb(237, 106, 0);
+	padding: 8px 0px 8px 0px;
 }
 
 #footer {
 	background-image: url("http://127.0.0.1:8000/media/core/footerbg.png");
 	background-repeat: repeat-y;
 	height: 200px;
+}
+
+#cart {
+	text-align:right;
 }
 
 ul {
@@ -63,6 +68,21 @@ ul.tabs li a {
 
 ul.tabs li a:hover, ul.tabs li a:focus, ul.tabs li.active a {
     background: none repeat scroll 0% 0% rgb(237, 106, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 3px 3px 3px 3px;
+}
+
+ul.header a {
+	color: rgb(255, 255, 255);
+	padding: 3px 8px 3px 8px;
+}
+
+ul.header {
+	padding: 0px 5px 0px 5px;
+}
+
+ul.header li a:hover, ul.header li a:focus, ul.header li.active a {
+    background: none repeat scroll 0% 0% rgb(255, 158, 62);
     color: rgb(255, 255, 255);
     border-radius: 3px 3px 3px 3px;
 }

@@ -9,7 +9,8 @@
 	<body>
 	<div class="container_12">
 		<div id="top_header" class="grid_12">
-			<ul>
+			<div class="grid_10 alpha">
+				<ul class="header">
 				{% if user.is_authenticated %}
 					<li><a href="/accounts/profile">My Account</a></li>
 					<li><a href="{% url "order_list" %}">My Orders</a></li>
@@ -17,7 +18,13 @@
 				{% else %}
 					<li><a href="/accounts/login">Login/Register</a></li>
 				{% endif %}
-			</ul>
+				</ul>
+			</div>
+			<div id="cart" class="grid_2 omega">
+				<ul class="header">
+					<li><a href="{% url "cart" %}">View Cart</a></li>
+				</ul>
+			</div>
 		</div>
 		<div id="header" class="grid_12">
 			<div id="logo" class="grid_4 alpha"><img src="/media/core/SGC_logo.png"></div>

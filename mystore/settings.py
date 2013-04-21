@@ -129,7 +129,7 @@ INSTALLED_APPS = (
     'south',
     'shop',
     'shop.addressmodel',
-    'myshop',
+    'products',
 )
 
 # A sample logging configuration. The only tangible logging
