@@ -5,6 +5,7 @@
 		{% load staticfiles %}
 		{% load shop_tags %}
 		{% load mptt_tags %}
+		{% load prod_tags %}
 		<link rel="stylesheet" type="text/css" href="/media/css/960_12_col.css"/> 
 		<link rel="stylesheet" type="text/css" href="/media/css/style.css"/> 
 	</head>
@@ -51,7 +52,7 @@
 		<div id="content" class="grid_12">
 			{% block content %}
 			<div id="sidebar" class="grid_3 alpha">
-
+				{% category_tree %}
 			</div>
 			<div id="body" class="grid_9 omega">{% block body %}{% endblock%}</div>
 			{% endblock%}

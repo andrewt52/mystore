@@ -15,4 +15,7 @@ urlpatterns = patterns('',
     url(r'^accounts/profile/$', 'mystore.views.profile'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^users/[\w-]+/$', lambda x: HttpResponseRedirect('/accounts/profile/')),
+    url(r'^categories/(?P<slug>[\w-]+)/$', 'products.views.category_detail'),
+    url(r'^categories/', 'products.views.categories'),
+
 )
