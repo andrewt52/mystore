@@ -29,15 +29,23 @@
 			</div>
 		</div>
 		<div id="header" class="grid_12">
-			<div id="logo" class="grid_4 alpha"><img src="/media/core/SGC_logo.png"></div>
-			<div id="search" class="grid_5">Search Box Here</div>
-			<div id="login" class="grid_3 omega">Login/Register Area</div>
+			<div id="logo" class="grid_4 alpha"><a href="/"><img src="/media/core/SGC_logo.png"></a></div>
+			<div id="search" class="grid_7 prefix_1 omega">
+			
+			<form id="searchform" action="/search" method="post" role="search">
+					<label class="screen-reader-text" for="s"></label>
+					<input id="s" type="text" placeholder="Search for products" name="s" value=""></input>
+					<input id="searchsubmit" type="submit" value="Search"></input>
+			</form>
+			
+			</div>
 		</div>
 		<div id="menu" class="grid_12">
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="">About</a></li>
-				<li><a href="">Contact us</a></li>
+			<ul class="menu">
+				<li{% if request.path == "/shop/" %} class="active"{% endif %}><a href="/">Home</a></li>
+				<li{% if request.path == "/shop/products/" %} class="active"{% endif %}><a href="/shop/products">Browse Shop</a></li>
+				<li{% if request.path == "/contact/" %} class="active"{% endif %}><a href="/contact">Contact us</a></li>
+				<li{% if request.path == "/about/" %}class="active"{% endif %}><a href="/about">About</a></li>
 			</ul>
 		</div>
 		<div id="content" class="grid_12">
