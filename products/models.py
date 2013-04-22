@@ -13,6 +13,9 @@ class Category(MPTTModel):
 			return u'%s -> %s' % (self.parent.name, self.name)
 		return u'%s' % (self.name)
 
+	def get_absolute_url(self):
+		return "/categories/%s/" % self.slug
+
 	class Meta:
 		verbose_name = 'Category'
 		verbose_name_plural = 'Categories'

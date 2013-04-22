@@ -34,13 +34,13 @@
 	padding: 8px 0px 8px 0px;
 }
 
-ul {
+ul.tabs, ul.menu, ul.header {
 	display: block;
 	margin: 0px;
 	padding: 0px;
 }
 
-li {
+ul.tabs li, ul.menu li, ul.header li {
   display: inline;
  }
  
