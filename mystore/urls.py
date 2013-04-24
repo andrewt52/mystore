@@ -8,9 +8,11 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', lambda x: HttpResponseRedirect('/shop/')),
+	url(r'^shop/products/$', lambda x: HttpResponseRedirect('/shop/categories/')),
 	url(r'^shop/categories/(?P<slug>[\w-]+)/$', 'products.views.category_detail'),
     url(r'^shop/categories/$', 'products.views.categories'),
 	url(r'^shop/', include(shop_urls)),
+	url(r'^search/$', 'products.views.search'),
 	url(r'^media/(?P<path>.*)$', 'django.views.static.serve',  
          {'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/', include(admin.site.urls)),
