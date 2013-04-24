@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'shop.addressmodel',
     'products',
     'mptt',
+    'shop_paypal'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -168,3 +169,7 @@ from django.conf import global_settings
 TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
     "django.core.context_processors.request",
 )
+
+SHOP_PAYMENT_BACKENDS = ('shop_paypal.offsite_paypal.OffsitePaypalBackend',)
+PAYPAL_RECEIVER_EMAIL = 'bradley.haynes-facilitator@gmail.com'
+PAYPAL_CURRENCY_CODE = 'USD'

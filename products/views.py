@@ -9,5 +9,9 @@ def show_categories(request):
                           context_instance=RequestContext(request))
 
 def category_detail(request, slug):
-	s = get_object_or_404(Category, slug=slug)
-	return HttpResponse("%s" % s.name)
+	category = get_object_or_404(Category, slug=slug)
+	return HttpResponse("%s" % category.name)
+
+def categories(request):
+	categories = Category.objects.filter(parent__isnull=True)
+	return render(request, "categories.html", {'categories': categories})

@@ -1,14 +1,12 @@
-{% load mptt_tags %}
-<ul>
-    {% recursetree nodes %}
-        <li>
-            <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
-            {% if not node.is_leaf_node %}
-                <ul class="children">
-                    {{ children }}
-                </ul>
-            {% endif %}
-        </li>
-    {% endrecursetree %}
-</ul>
+{% extends "shop/base.html" %}
 
+{% block body %}
+
+	{% for category in categories %}
+		<div class="grid_3 category omega">
+			<a href="/shop/categories/{{ category.slug }}/"><img src="/media/{{ category.photo }}"></a>
+			<h3>{{ category.name }}</h3>
+		</div>
+	{% endfor %}
+
+{% endblock %}

@@ -34,7 +34,6 @@
 			<div id="search" class="grid_7 prefix_1 omega">
 			
 			<form id="searchform" action="/search" method="post" role="search">
-					<label class="screen-reader-text" for="s"></label>
 					<input id="s" type="text" placeholder="Search for products" name="s" value=""></input>
 					<input id="searchsubmit" type="submit" value="Search"></input>
 			</form>
@@ -44,7 +43,7 @@
 		<div id="menu" class="grid_12">
 			<ul class="menu">
 				<li{% if request.path == "/shop/" %} class="active"{% endif %}><a href="/">Home</a></li>
-				<li{% if request.path == "/shop/products/" %} class="active"{% endif %}><a href="/shop/products">Browse Shop</a></li>
+				<li{% if request.path == "/shop/categories/" %} class="active"{% endif %}><a href="/shop/categories">Browse Shop</a></li>
 				<li{% if request.path == "/contact/" %} class="active"{% endif %}><a href="/contact">Contact us</a></li>
 				<li{% if request.path == "/about/" %}class="active"{% endif %}><a href="/about">About</a></li>
 			</ul>

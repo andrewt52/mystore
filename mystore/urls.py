@@ -8,6 +8,8 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', lambda x: HttpResponseRedirect('/shop/')),
+	url(r'^shop/categories/(?P<slug>[\w-]+)/$', 'products.views.category_detail'),
+    url(r'^shop/categories/$', 'products.views.categories'),
 	url(r'^shop/', include(shop_urls)),
 	url(r'^media/(?P<path>.*)$', 'django.views.static.serve',  
          {'document_root': settings.MEDIA_ROOT}),
@@ -15,7 +17,4 @@ urlpatterns = patterns('',
     url(r'^accounts/profile/$', 'mystore.views.profile'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^users/[\w-]+/$', lambda x: HttpResponseRedirect('/accounts/profile/')),
-    url(r'^categories/(?P<slug>[\w-]+)/$', 'products.views.category_detail'),
-    url(r'^categories/', 'products.views.categories'),
-
 )

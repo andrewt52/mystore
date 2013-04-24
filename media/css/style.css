@@ -173,3 +173,24 @@ a {
 #searchform {
 	padding-top: 25px;
 }
+
+.category h3 {
+	font-weight: bold;
+	font-size: 14pt;	
+}
+
+.category {
+	text-align: center;
+	border: 1px solid rgb(200, 200, 200);
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+.category:hover{
+	border-color:  rgb(237, 106, 0);
+}
+
+.category img {
+	height: 150px;
+	width: 150px;
+}

@@ -14,7 +14,7 @@ class Category(MPTTModel):
 		return u'%s' % (self.name)
 
 	def get_absolute_url(self):
-		return "/categories/%s/" % self.slug
+		return "/shop/categories/%s/" % self.slug
 
 	class Meta:
 		verbose_name = 'Category'
