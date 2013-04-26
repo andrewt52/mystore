@@ -17,6 +17,8 @@ urlpatterns = patterns('',
          {'document_root': settings.MEDIA_ROOT}),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/profile/$', 'mystore.views.profile'),
+    url(r'^accounts/profile/form/customer$', 'customers.views.add_customer'),
+    url(r'^accounts/profile/form/address$', 'customers.views.add_address'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^users/[\w-]+/$', lambda x: HttpResponseRedirect('/accounts/profile/')),
 )

@@ -1,0 +1,33 @@
+{% extends "shop/base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h1>Customer Information</h1>
+    {% if user.is_authenticated %}
+        {% if form.errors %}
+            <p style="color: red;">
+                Please correct the error{{ form.errors|pluralize }} below.
+            </p>
+        {% endif %}
+
+        <form action="" method="post">
+            <div class="field">
+                {{ form.user.errors }}
+                User: <label for="id_user"><select id="id_user" name="user">
+                <option value="{{user.id}}">{{user}}</option>
+                </select></label>
+            </div>
+            <div class="field">
+                {{ form.phone_number.errors }}
+                <label for="id_phone_number">Phone Number(Optional):</label>
+                {{ form.phone_number }}
+            </div>
+            {% csrf_token %}
+            <input type="submit" value="Submit">
+        </form>
+    {% else %}
+        Please login to use this.
+    {% endif %}
+
+
+{% endblock %}
