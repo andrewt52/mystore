@@ -1,7 +1,14 @@
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django_localflavor_us.models import PhoneNumberField, USStateField
+
+@receiver(post_save, sender=User)
+def customer_creation_handler(sender, **kwargs):
+	instance = kwargs['instance']
+	Customer.objects.get_or_create(user=instance)
 
 class Customer(models.Model):
 	user = models.OneToOneField(User)
@@ -9,12 +16,14 @@ class Customer(models.Model):
 	# last name included in user model
 	# email included in user model
 	phone_number = PhoneNumberField(blank=True)
+	
+	def __unicode__(self):
+		return u'%s' % self.user.username
 
 class CustomerForm(ModelForm):
         class Meta:
                 model = Customer
 
-        
 class CustomerAddress(models.Model):
 	customer = models.ForeignKey(Customer)
 	name = models.CharField(max_length=150)
