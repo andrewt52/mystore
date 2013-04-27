@@ -20,5 +20,7 @@ urlpatterns = patterns('',
     url(r'^accounts/profile/form/customer$', 'customers.views.add_customer'),
     url(r'^accounts/profile/form/address$', 'customers.views.add_address'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^contact/$', 'mystore.views.contact'),
+    url(r'^contact/thanks/$', 'mystore.views.thanks'),
     url(r'^users/[\w-]+/$', lambda x: HttpResponseRedirect('/accounts/profile/')),
 )

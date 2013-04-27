@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+
+
+{% block body %}
+    {% load i18n %}
+
+    <h1>Contact Us</h1>
+
+    {% if form.errors %}
+        <p style="color: red;">
+            Please correct the error{{ form.errors|pluralize }} below.
+        </p>
+    {% endif %}
+
+    <form action="" method="post">
+        <table>
+            {{ form.as_table }}
+        </table>
+        {% csrf_token %}
+        <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
