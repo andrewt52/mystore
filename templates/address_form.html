@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-    <h1>Customer Information</h1>
+    <h1>Add address</h1>
     {% if user.is_authenticated %}
         {% if form.errors %}
             <p style="color: red;">
@@ -11,12 +11,49 @@
         {% endif %}
 
         <form action="" method="post">
-            {% for field in form %}
-                <div class="fieldWrapper">
-                    {{ field.errors }}
-                    {{ field.label_tag }} {{ field }}
-                </div>
-            {% endfor %}
+            <div class="fieldWrapper">
+                {{ form.customer.errors }}
+                User: <label for="id_customer"></label><select id="id_customer" name="customer">
+                <option value="{{user.id}}" selected="selected">{{user}}</option>
+                </select>
+            </div>
+
+            <div class="fieldWrapper">
+                {{ form.name.errors }}
+                <label for="id_name">Name:</label>
+                {{ form.name }}
+            </div>
+            
+            <div class="fieldWrapper">
+                {{ form.line_1.errors }}
+                <label for="id_line_1">Address Line 1:</label>
+                {{ form.line_1 }}
+            </div>
+            
+            <div class="fieldWrapper">
+                {{ form.line_2.errors }}
+                <label for="id_line_2">Address Line 2(Optional):</label>
+                {{ form.line_2 }}
+            </div>
+            
+            <div class="fieldWrapper">
+                {{ form.city.errors }}
+                <label for="id_city">City:</label>
+                {{ form.city }}
+            </div>
+
+            <div class="fieldWrapper">
+                {{ form.state.errors }}
+                <label for="id_state">State:</label>
+                {{ form.state }}
+            </div>
+            
+            <div class="fieldWrapper">
+                {{ form.postalcode.errors }}
+                <label for="id_postalcode">Postal Code:</label>
+                {{ form.postalcode }}
+            </div>
+            
             {% csrf_token %}
             <input type="submit" value="Submit">
         </form>
