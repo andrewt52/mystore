@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-    <h1>Change Phone Number</h1>
+    <h1>Edit address {{number}}</h1>
     {% if user.is_authenticated %}
         {% if form.errors %}
             <p style="color: red;">
@@ -10,7 +10,7 @@
             </p>
         {% endif %}
 
-        <form action="" method="post">
+            <form action="" method="post">
             <table>
                 {{ form.as_table }}
             </table>

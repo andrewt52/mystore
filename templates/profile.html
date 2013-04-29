@@ -1,0 +1,30 @@
+{% extends "shop/base.html" %}
+
+{% block content %}
+
+    <a href="/accounts/profile/edit">Edit your profile information.</a><br>
+    Username: {{user}}
+    <br>
+    First Name: {{user.first_name}}
+    <br>
+    Last Name: {{user.last_name}}
+    <br>
+    Email address: {{user.email}}
+    <br>
+    Phone Number: {{customer.phone_number}} <a href="/accounts/profile/form/phonenumber">Edit this number.</a>
+
+    <br><br>
+    <a href="/accounts/profile/form/address">Add a new address.</a><br>
+    {%for address in addresses %}
+        <br>
+        <b>Address {{forloop.counter}}</b> <a href="/accounts/profile/form/address/{{forloop.counter}}">Edit this address.</a>
+        <br><a href="/accounts/profile/form/address/delete/{{forloop.counter}}">Delete this address.</a>
+        <br>
+        Name: {{address.name}}<br>
+        Line 1: {{address.line_1}}<br>
+        Line 2: {{address.line_2}}<br>
+        City: {{address.city}}<br>
+        State: {{address.state}}<br>
+        Postal Code: {{address.postalcode}}<br>
+    {% endfor %}
+{% endblock %}

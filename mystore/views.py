@@ -19,7 +19,7 @@ def contact(request):
             )
             return HttpResponseRedirect('/contact/thanks/')
     else:
-        form = ContactForm()
+        form = ContactForm(initial = {'email':request.user.email})
     return render(request, 'contact.html', {'form': form})
 
 def thanks(request):

@@ -11,48 +11,9 @@
         {% endif %}
 
         <form action="" method="post">
-            <div class="fieldWrapper">
-                {{ form.customer.errors }}
-                User: <label for="id_customer"></label><select id="id_customer" name="customer">
-                <option value="{{user.id}}" selected="selected">{{user}}</option>
-                </select>
-            </div>
-
-            <div class="fieldWrapper">
-                {{ form.name.errors }}
-                <label for="id_name">Name:</label>
-                {{ form.name }}
-            </div>
-            
-            <div class="fieldWrapper">
-                {{ form.line_1.errors }}
-                <label for="id_line_1">Address Line 1:</label>
-                {{ form.line_1 }}
-            </div>
-            
-            <div class="fieldWrapper">
-                {{ form.line_2.errors }}
-                <label for="id_line_2">Address Line 2(Optional):</label>
-                {{ form.line_2 }}
-            </div>
-            
-            <div class="fieldWrapper">
-                {{ form.city.errors }}
-                <label for="id_city">City:</label>
-                {{ form.city }}
-            </div>
-
-            <div class="fieldWrapper">
-                {{ form.state.errors }}
-                <label for="id_state">State:</label>
-                {{ form.state }}
-            </div>
-            
-            <div class="fieldWrapper">
-                {{ form.postalcode.errors }}
-                <label for="id_postalcode">Postal Code:</label>
-                {{ form.postalcode }}
-            </div>
+            <table>
+                {{ form.as_table }}
+            </table>
             
             {% csrf_token %}
             <input type="submit" value="Submit">

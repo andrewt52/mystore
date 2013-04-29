@@ -23,6 +23,7 @@ class Customer(models.Model):
 class CustomerForm(ModelForm):
         class Meta:
                 model = Customer
+                fields = ('phone_number', )
 
 class CustomerAddress(models.Model):
 	customer = models.ForeignKey(Customer)
@@ -36,3 +37,4 @@ class CustomerAddress(models.Model):
 class CustomerAddressForm(ModelForm):
         class Meta:
                 model = CustomerAddress
+                fields = ('name','line_1','line_2','city','state','postalcode')
